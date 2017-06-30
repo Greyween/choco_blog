@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %
+	Edit your account
+{% endblock %}
+
+{% block content %}
+	<h1>Edit your account</h1>
+
+	<form method="post" action="." enctype="multipart/form-data" 
+				class="form">
+		{% csrf_token %}
+
+		{% bootstrap_form form %}
+
+		{% buttons %
+			<input type="submit" name="submit" value="Update">
+		{% endbuttons %}
+	</form>
+{% endblock %}	 
