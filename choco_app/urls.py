@@ -21,12 +21,12 @@ from django.conf.urls.static  import static
 from blog import views
 
 urlpatterns = [
-		url(r'^$', views.PostListView.as_view(), name='post_list'),
+    url(r'^$', views.PostListView.as_view(), name='post_list'),
     url(r'^admin/', admin.site.urls),
     url(r'^account/', include('account.urls', namespace='account', app_name='account')),
     url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
 ]
 
 if settings.DEBUG:
-	urlpatterns += static(settings.MEDIA_URL, 
-												document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, 
+                          document_root=settings.MEDIA_ROOT)
